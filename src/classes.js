@@ -19,7 +19,7 @@ class Persona{
   calcularIMCHombre(IMC){
     return IMC < 20
       ? -1
-      : IMC >= 20 || IMC < 25
+      : IMC >= 20 && IMC < 25
       ? 0
       : 1
   }
@@ -27,17 +27,17 @@ class Persona{
   calcularIMCMujer(IMC){
     return IMC < 19
       ? -1
-      : IMC >= 19 || IMC < 24
+      : IMC >= 19 && IMC < 24
       ? 0
       : 1
   }
 
   esMayorDeEdad(){
-    this.edad >= 18 ? true : false;
+    return this.edad >= 18;
   }
 
   comprobarSexo(sexo){
-    return sexo === 'H' || sexo === 'M' ? true : false;
+    return sexo === 'H' || sexo === 'M';
   }
 
   generarNSS(){
