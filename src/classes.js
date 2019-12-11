@@ -1,9 +1,9 @@
 class Persona{
   
-  constructor(nombre='', edad=0, NSS=this.generarNSS(), sexo='H', peso=0, altura=0){
+  constructor(NSS=this.generarNSS(), nombre='', edad=0, sexo='H', peso=0, altura=0){
+    this.NSS = NSS;
     this.nombre = nombre;
     this.edad = edad;
-    this.NSS = NSS;
     this.sexo = sexo;
     this.peso = peso;
     this.altura = altura;
@@ -44,9 +44,15 @@ class Persona{
     return Math.random().toString(36).substr(2, 8);
   }
 
-  //*toString(): devuelve toda la información del objeto.
-  /* toString(){
-    return 
-  } */
+  setNuevoValor(llave, valor){
+    this[llave] = valor;
+  }
+
+  toString(){
+    return `Hola, mi nombre es ${this.nombre || undefined}, tengo ${this.edad}. Mi sexo es ${this.sexo}, peso ${this.peso} y mido ${this.altura}`
+  }
 
 }
+
+const yo = new Persona();
+console.log(yo.toString());
